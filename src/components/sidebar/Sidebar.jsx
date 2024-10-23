@@ -92,21 +92,21 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="h-screen px-4 py-5 border-r border-[#1C1C1C1A] flex flex-col gap-4">
-      {/* Profile Section */}
+    <div className="h-screen px-4 py-5 border-r border-[#1C1C1C1A] dark:border-[#FFFFFF1A] flex flex-col gap-4 bg-white dark:bg-[#1c1c1c] overflow-y-auto scroll-hidden">
       <div className="flex gap-2 items-center">
         <ProfileIcon />
-        <div className="font-normal text-sm text-[#1C1C1C]">ByeWind</div>
+        <div className="font-normal text-sm text-[#1C1C1C] dark:text-[#FFFFFF] ">
+          ByeWind
+        </div>
       </div>
 
-      {/* Favourites & Recently Section */}
-      <div className="flex gap-2 justify-center text-sm text-[#1C1C1C66]">
+      <div className="flex gap-2  text-sm text-[#1C1C1C66] dark:text-[#FFFFFF66]">
         {["Favourites", "Recently"].map((item, index) =>
           <span
             key={item}
             className={`cursor-pointer ${highlight === index
-              ? "text-[#1C1C1C66]"
-              : "text-[#1C1C1C33]"}`}
+              ? "text-[#1C1C1C66] dark:text-[#FFFFFF66]"
+              : "text-[#1C1C1C66] dark:text-[#FFFFFF33]"}`}
             onClick={() => handleHighlight(index)}
           >
             {item}
@@ -114,19 +114,20 @@ const Sidebar = () => {
         )}
       </div>
 
-      {/* Overview & Projects Section */}
       <div className="flex flex-col gap-1">
         {["Overview", "Projects"].map(item =>
-          <div className="flex items-center gap-1" key={item}>
+          <div
+            className="flex items-center gap-1 text-[#1C1C1C ] dark:text-[#FFFFFF]"
+            key={item}
+          >
             <DotIcon />
-            <span className="font-normal text-sm">
+            <span className="font-normal text-sm ">
               {item}
             </span>
           </div>
         )}
       </div>
 
-      {/* Dashboards Section */}
       <div className="font-normal text-sm text-[#1C1C1C66]">Dashboards</div>
       <div className="flex flex-col gap-2">
         {DashboardItems.map(item =>
@@ -143,7 +144,7 @@ const Sidebar = () => {
                   {expandedItem === item.name ? "V" : ">"}
                 </span>}
               {item.icon}
-              <div className="ml-2 font-normal text-sm text-[#1C1C1C]">
+              <div className="ml-2 font-normal text-sm text-[#1C1C1C ] dark:text-[#FFFFFF]  ">
                 {item.name}
               </div>
             </div>
@@ -167,7 +168,6 @@ const Sidebar = () => {
         )}
       </div>
 
-      {/* Pages Section */}
       <div className="font-normal text-sm text-[#1C1C1C66]">Pages</div>
       <div className="flex flex-col gap-2">
         {PagesItems.map(item =>
@@ -183,7 +183,7 @@ const Sidebar = () => {
                 {expandedPageItem === item.name ? "V" : ">"}
               </span>
               {item.icon}
-              <div className="ml-2 font-normal text-sm text-[#1C1C1C]">
+              <div className="ml-2 font-normal text-sm text-[#1C1C1C ] dark:text-[#FFFFFF]  ">
                 {item.name}
               </div>
             </div>
@@ -192,7 +192,7 @@ const Sidebar = () => {
                 {item.subItems.map(subItem =>
                   <div
                     key={subItem}
-                    className={`flex p-2 cursor-pointer rounded ${selectedSubItem ===
+                    className={`flex p-2 cursor-pointer rounded font-normal text-sm text-[#1C1C1C ] dark:text-[#FFFFFF] ${selectedSubItem ===
                     subItem
                       ? "bg-gray-200"
                       : ""}`}

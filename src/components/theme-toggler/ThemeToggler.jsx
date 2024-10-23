@@ -26,7 +26,7 @@ const ThemeToggler = () => {
     <>
     <div
       onClick={toggleTheme}
-      className={`w-min ${mode === "dark" ? "bg-black" : "bg-white"}`} 
+      className={`w-min `} 
       role="button" 
       aria-label={`Switch to ${mode === "light" ? "dark" : "light"} mode`} 
       
