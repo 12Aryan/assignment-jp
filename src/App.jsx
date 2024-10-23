@@ -1,19 +1,21 @@
 // App.jsx
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from './layout/Layout';
+import Layout from "./layout/Layout";
+import Dashboard from "./features/dashboard/Dashboard";
+import OrderList from "./features/Orders/OrderList";
 
 const router = createBrowserRouter([
   {
-    path: "/", 
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/", 
-        element: <div>default</div>,
+        path: "/",
+        element: <Dashboard />,
       },
       {
         path: "/order-list",
-        element: <div>order list</div>,
+        element: <OrderList />,
       },
     ],
   },
