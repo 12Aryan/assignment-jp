@@ -1,8 +1,13 @@
 import { useState } from "react";
+import CalendarIcon from "../../icons/CalendarIcon";
+import { useSelector } from "react-redux";
+import User3 from "../../icons/User3";
+import DotIcon from "../../icons/DotIcon";
 
 const TableComponent = () => {
   const [selectAll, setSelectAll] = useState(false);
   const [selectedRows, setSelectedRows] = useState({});
+  const mode = useSelector((state) => state.toggleTheme.theme);
 
   const data = [
     {
@@ -48,6 +53,14 @@ const TableComponent = () => {
   ];
 
   const headers = ["Order Id", "User", "Project", "Address", "Date", "Status"];
+
+  const statusColors = {
+    "In Progress": "#8A8CD9",
+    Complete: "#4AA785",
+    Pending: "#59A8D4",
+    Approved: "#FFC555",
+    Rejected: "#db1b1b",
+  };
 
   const handleSelectAll = () => {
     setSelectAll(!selectAll);
@@ -118,7 +131,9 @@ const TableComponent = () => {
                 {item.orderId}
               </td>
               <td className="px-4 py-2 text-[#1C1C1C] dark:text-[#FFFFFF] text-sm font-normal  ">
-                {item.user}
+                <div className="flex gap-2 items-center">
+                  {<User3 />} {item.user}
+                </div>
               </td>
               <td className="px-4 py-2 text-[#1C1C1C] dark:text-[#FFFFFF] text-sm font-normal  ">
                 {item.project}
@@ -127,10 +142,24 @@ const TableComponent = () => {
                 {item.address}
               </td>
               <td className="px-4 py-2 text-[#1C1C1C] dark:text-[#FFFFFF] text-sm font-normal  ">
-                {item.date}
+                <div className="flex gap-1 items-center">
+                  {
+                    <CalendarIcon
+                      {...(mode === "dark" && { fill: "#FFFFFF" })}
+                    />
+                  }
+                  {item.date}
+                </div>
               </td>
-              <td className="px-4 py-2 text-[#1C1C1C] dark:text-[#FFFFFF] text-sm font-normal  ">
-                {item.status}
+              <td
+                className="px-4 py-2 text-sm font-normal"
+                style={{ color: statusColors[item.status] }}
+              >
+                <div className="flex items-center gap-1">
+                  <DotIcon fill={statusColors[item.status] || "#000000"} />{" "}
+                  {/* Fallback color for dot */}
+                  {item.status}
+                </div>
               </td>
             </tr>
           ))}

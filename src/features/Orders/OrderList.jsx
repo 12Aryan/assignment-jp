@@ -16,13 +16,22 @@ const OrderList = () => {
       <div className="flex flex-col gap-6">
         <div className="flex  p-2 rounded-lg bg-[#F7F9FB] dark:bg-[#FFFFFF0D] justify-between items-center ">
           <div className="flex gap-1">
-            <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+            <div
+              title={"No actions attached to this button"}
+              className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+            >
               <AddIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
             </div>
-            <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+            <div
+              title={"No actions attached to this button"}
+              className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+            >
               <FilterIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
             </div>
-            <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+            <div
+              title={"No actions attached to this button"}
+              className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+            >
               <SortingIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
             </div>
           </div>

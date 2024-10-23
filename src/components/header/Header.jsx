@@ -14,10 +14,16 @@ const Header = () => {
     <div className="flex h-[68px] px-8 justify-between items-center border-b border-[#1C1C1C1A] dark:border-[#FFFFFF1A]">
       <div className="flex items-center gap-4 ">
         <div className="flex">
-          <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+          <div
+            title={"No actions attached to this button"}
+            className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+          >
             <ToggleIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>
-          <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+          <div
+            title={"No actions attached to this button"}
+            className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer  "
+          >
             <StarIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>
         </div>
@@ -48,16 +54,28 @@ const Header = () => {
           </div>
         </div>
         <div className="flex gap-2 items-center">
-          <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+          <div
+            title={"Change theme!"}
+            className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+          >
             <ThemeToggler {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>
-          <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+          <div
+            title={"No actions attached to this button"}
+            className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+          >
             <ClockIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>
-          <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+          <div
+            title={"No actions attached to this button"}
+            className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+          >
             <BellIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>
-          <div className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer ">
+          <div
+            title={"No actions attached to this button"}
+            className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+          >
             <ToggleIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>
         </div>
