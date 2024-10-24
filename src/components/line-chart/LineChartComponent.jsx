@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import {
-  BarChart,
-  Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -10,20 +10,26 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Jan", value: 17, bg: 4 },
-  { name: "Feb", value: 21, bg: 3 },
-  { name: "Mar", value: 18, bg: 5 },
-  { name: "Apr", value: 23, bg: 5 },
-  { name: "May", value: 15, bg: 4 },
-  { name: "Jun", value: 21, bg: 5 },
+  //   { name: "Jan", line1: 10, line2: 13 },
+  //   { name: "Feb", line1: 19, line2: 10 },
+  //   { name: "Mar", line1: 17, line2: 11 },
+  //   { name: "Apr", line1: 12, line2: 14 },
+  //   { name: "May", line1: 13, line2: 20 },
+  //   { name: "Jun", line1: 22, line2: 19 },
+  { name: "Jan", line1: 12, line2: 18 },
+  { name: "Feb", line1: 15, line2: 15 },
+  { name: "Mar", line1: 25, line2: 5 },
+  { name: "Apr", line1: 29, line2: 1 },
+  { name: "May", line1: 23, line2: 7 },
+  { name: "Jun", line1: 10, line2: 20 },
 ];
 
-const BarChartComponent = () => {
+const LineChartComponent = () => {
   const mode = useSelector((state) => state.toggleTheme.theme);
 
   return (
-    <ResponsiveContainer width="100%" height={168}>
-      <BarChart
+    <ResponsiveContainer width="100%" height={232}>
+      <LineChart
         data={data}
         margin={{ top: 0, right: 24, left: 0, bottom: 0 }}
         width={"100%"}
@@ -56,19 +62,26 @@ const BarChartComponent = () => {
             fill: mode === "dark" ? "#FFFFFF66" : "#1C1C1C66",
           }}
           domain={[0, 30]}
+          tickMargin={10}
         />
         <Tooltip />
-        <Bar dataKey="value" stackId="a" fill="#A8C5DA" barSize={20} />
-        <Bar
-          dataKey="bg"
-          stackId="a"
-          fill="#cfdfeb"
-          barSize={20}
-          radius={[4, 4, 0, 0]}
+        <Line
+          type="monotone"
+          dataKey="line1"
+          stroke="#A8C5DA"
+          strokeWidth={4}
+          dot={false}
         />
-      </BarChart>
+        <Line
+          type="monotone"
+          dataKey="line2"
+          stroke={mode === "dark" ? "#C6C7F8" : "#1C1C1C"}
+          strokeWidth={4}
+          dot={false}
+        />
+      </LineChart>
     </ResponsiveContainer>
   );
 };
 
-export default BarChartComponent;
+export default LineChartComponent;
