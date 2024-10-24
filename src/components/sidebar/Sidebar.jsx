@@ -23,79 +23,79 @@ const Sidebar = () => {
   const [expandedItem, setExpandedItem] = useState(null);
   const [expandedPageItem, setExpandedPageItem] = useState(null);
   const [selectedSubItem, setSelectedSubItem] = useState(null);
-  const mode = useSelector((state) => state.toggleTheme.theme);
+  const mode = useSelector(state => state.toggleTheme.theme);
 
   const DashboardItems = [
     {
       name: "Default",
-      icon: <DashboardIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <DashboardIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       path: "/",
-      type: "link",
+      type: "link"
     },
     {
       name: "Order List",
-      icon: <BlogsIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <BlogsIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       path: "/order-list",
-      type: "link",
+      type: "link"
     },
     {
       name: "eCommerce",
-      icon: <EcomIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <EcomIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["Products", "Categories"],
+      subItems: ["Products", "Categories"]
     },
     {
       name: "Projects",
-      icon: <ProjectIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <ProjectIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["List", "Users"],
+      subItems: ["List", "Users"]
     },
     {
       name: "Online Courses",
-      icon: <BookIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <BookIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["Price", "Domain"],
-    },
+      subItems: ["Price", "Domain"]
+    }
   ];
 
   const PagesItems = [
     {
       name: "User Profile",
-      icon: <UserIcons {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <UserIcons {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["Overview", "Projects", "Campaigns", "Document", "Followers"],
+      subItems: ["Overview", "Projects", "Campaigns", "Document", "Followers"]
     },
     {
       name: "Account",
-      icon: <AccountIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <AccountIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["Campaigns", "Document"],
+      subItems: ["Campaigns", "Document"]
     },
     {
       name: "Corporate",
-      icon: <CorporateIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <CorporateIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["Projects", "Followers"],
+      subItems: ["Projects", "Followers"]
     },
     {
       name: "Blog",
-      icon: <BlogsIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <BlogsIcon {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["Campaigns", "Document", "Followers"],
+      subItems: ["Campaigns", "Document", "Followers"]
     },
     {
       name: "Social",
-      icon: <SocialIcons {...(mode === "dark" && { fill: "#FFFFFF" })} />,
+      icon: <SocialIcons {...mode === "dark" && { fill: "#FFFFFF" }} />,
       type: "tree",
-      subItems: ["Document", "Followers"],
-    },
+      subItems: ["Document", "Followers"]
+    }
   ];
 
-  const handleHighlight = (index) => {
+  const handleHighlight = index => {
     setHighlight(index);
   };
 
-  const handleClick = (item) => {
+  const handleClick = item => {
     setSelectedSubItem(null);
     setSelectedItem(item.name);
     item.type === "link"
@@ -103,17 +103,17 @@ const Sidebar = () => {
       : setExpandedItem(expandedItem === item.name ? null : item.name);
   };
 
-  const handleSubItemClick = (subItem) => {
+  const handleSubItemClick = subItem => {
     setSelectedSubItem(subItem);
     setSelectedItem(null);
   };
 
-  const handlePageClick = (item) => {
+  const handlePageClick = item => {
     setExpandedPageItem(expandedPageItem === item.name ? null : item.name);
   };
 
   return (
-    <div className="flex flex-col h-screen min-w-[212px] px-5 py-6 gap-8 border-r border-[#1C1C1C1A] dark:border-[#FFFFFF1A]  overflow-y-auto scroll-hidden">
+    <div className="flex flex-col h-screen min-w-[212px] px-5 py-6 gap-8 border-r border-[#1C1C1C1A] dark:border-[#FFFFFF1A] overflow-y-auto scroll-hidden">
       <div className="flex gap-2 items-center h-8 ">
         <ProfileIcon />
         <div className="font-normal text-sm text-[#1C1C1C] dark:text-[#FFFFFF] ">
@@ -122,31 +122,32 @@ const Sidebar = () => {
       </div>
       <div className="flex flex-col gap-3">
         <div className="flex gap-6 ">
-          {["Favourites", "Recently"].map((item, index) => (
+          {["Favourites", "Recently"].map((item, index) =>
             <span
               key={item}
-              className={`cursor-pointer font-normal text-sm ${
-                highlight === index
-                  ? "text-[#1C1C1C66] dark:text-[#FFFFFF66]  "
-                  : "text-[#1C1C1C33] dark:text-[#FFFFFF33] "
-              }`}
+              className={`cursor-pointer font-normal text-sm ${highlight ===
+              index
+                ? "text-[#1C1C1C66] dark:text-[#FFFFFF66]  "
+                : "text-[#1C1C1C33] dark:text-[#FFFFFF33] "}`}
               onClick={() => handleHighlight(index)}
             >
               {item}
             </span>
-          ))}
+          )}
         </div>
 
         <div className="flex flex-col gap-3">
-          {["Overview", "Projects"].map((item) => (
+          {["Overview", "Projects"].map(item =>
             <div
               className="flex items-center gap-1 text-[#1C1C1C] dark:text-[#FFFFFF]"
               key={item}
             >
-              <DotIcon {...(mode === "dark" && { fill: "#a1a1a1" })} />
-              <span className="font-normal text-sm ">{item}</span>
+              <DotIcon {...mode === "dark" && { fill: "#a1a1a1" }} />
+              <span className="font-normal text-sm ">
+                {item}
+              </span>
             </div>
-          ))}
+          )}
         </div>
       </div>
       <div className="flex flex-col">
@@ -154,52 +155,51 @@ const Sidebar = () => {
           Dashboards
         </div>
         <div className="flex flex-col ">
-          {DashboardItems.map((item) => (
+          {DashboardItems.map(item =>
             <div key={item.name}>
               <div
-                className={`flex items-center p-2 cursor-pointer rounded-lg relative ${
-                  selectedItem === item.name
-                    ? "bg-[#1C1C1C0D]  dark:bg-[#FFFFFF1A]"
-                    : ""
-                }`}
+                className={`flex items-center p-2 cursor-pointer rounded-lg relative ${selectedItem ===
+                item.name
+                  ? "bg-[#1C1C1C0D]  dark:bg-[#FFFFFF1A]"
+                  : ""}`}
                 onClick={() => handleClick(item)}
               >
-                {selectedItem === item.name && (
+                {selectedItem === item.name &&
                   <div className="absolute left-0">
-                    <BarIcon {...(mode === "dark" && { fill: "#C6C7F8" })} />
-                  </div>
-                )}
-                {item.type === "link" && <div className="h-4 w-4"></div>}
+                    <BarIcon {...mode === "dark" && { fill: "#C6C7F8" }} />
+                  </div>}
+                {item.type === "link" && <div className="h-4 w-4" />}
                 {item.type === "tree" &&
-                  (expandedItem === item.name ? (
-                    <DownArrow {...(mode === "dark" && { fill: "#a1a1a1" })} />
-                  ) : (
-                    <RightArrow {...(mode === "dark" && { fill: "#a1a1a1" })} />
-                  ))}
-                <div className="ml-1">{item.icon}</div>
+                  (expandedItem === item.name
+                    ? <DownArrow {...mode === "dark" && { fill: "#a1a1a1" }} />
+                    : <RightArrow
+                        {...mode === "dark" && { fill: "#a1a1a1" }}
+                      />)}
+                <div className="ml-1">
+                  {item.icon}
+                </div>
                 <div className="font-normal text-sm ml-1 text-[#1C1C1C ] dark:text-[#FFFFFF]  ">
                   {item.name}
                 </div>
               </div>
-              {item.type === "tree" && expandedItem === item.name && (
+              {item.type === "tree" &&
+                expandedItem === item.name &&
                 <div className="">
-                  {item.subItems.map((subItem) => (
+                  {item.subItems.map(subItem =>
                     <div
                       key={subItem}
-                      className={`flex py-1 px-[51px] cursor-pointer rounded-lg font-normal text-sm  text-[#1C1C1C ] dark:text-[#FFFFFF]  ${
-                        selectedSubItem === subItem
-                          ? "bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]"
-                          : ""
-                      }`}
+                      className={`flex py-1 px-[51px] cursor-pointer rounded-lg font-normal text-sm  text-[#1C1C1C ] dark:text-[#FFFFFF]  ${selectedSubItem ===
+                      subItem
+                        ? "bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]"
+                        : ""}`}
                       onClick={() => handleSubItemClick(subItem)}
                     >
                       {subItem}
                     </div>
-                  ))}
-                </div>
-              )}
+                  )}
+                </div>}
             </div>
-          ))}
+          )}
         </div>
       </div>
       <div className="flex flex-col">
@@ -207,54 +207,52 @@ const Sidebar = () => {
           Pages
         </div>
         <div className="flex flex-col">
-          {PagesItems.map((item) => (
+          {PagesItems.map(item =>
             <div key={item.name}>
               <div
-                className={`flex items-center p-2 cursor-pointer rounded-lg relative ${
-                  expandedPageItem === item.name
-                    ? "bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]"
-                    : ""
-                }`}
+                className={`flex items-center p-2 cursor-pointer rounded-lg relative ${expandedPageItem ===
+                item.name
+                  ? "bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]"
+                  : ""}`}
                 onClick={() => handlePageClick(item)}
               >
-                {expandedPageItem === item.name && (
+                {expandedPageItem === item.name &&
                   <div className="absolute left-0">
-                    <BarIcon {...(mode === "dark" && { fill: "#C6C7F8" })} />
-                  </div>
-                )}
+                    <BarIcon {...mode === "dark" && { fill: "#C6C7F8" }} />
+                  </div>}
                 <span className="text-sm">
-                  {expandedPageItem === item.name ? (
-                    <DownArrow {...(mode === "dark" && { fill: "#a1a1a1" })} />
-                  ) : (
-                    <RightArrow {...(mode === "dark" && { fill: "#a1a1a1" })} />
-                  )}
+                  {expandedPageItem === item.name
+                    ? <DownArrow {...mode === "dark" && { fill: "#a1a1a1" }} />
+                    : <RightArrow
+                        {...mode === "dark" && { fill: "#a1a1a1" }}
+                      />}
                 </span>
                 <div className="flex gap-1">
-                  <div className="ml-1">{item.icon}</div>
+                  <div className="ml-1">
+                    {item.icon}
+                  </div>
                   <div className="font-normal text-sm ml-1 text-[#1C1C1C ] dark:text-[#FFFFFF]  ">
                     {item.name}
                   </div>
                 </div>
               </div>
-              {expandedPageItem === item.name && (
+              {expandedPageItem === item.name &&
                 <div className="">
-                  {item.subItems.map((subItem) => (
+                  {item.subItems.map(subItem =>
                     <div
                       key={subItem}
-                      className={`flex py-1 px-[51px] cursor-pointer rounded-lg font-normal text-sm  text-[#1C1C1C ] dark:text-[#FFFFFF]  ${
-                        selectedSubItem === subItem
-                          ? "bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]"
-                          : ""
-                      }`}
+                      className={`flex py-1 px-[51px] cursor-pointer rounded-lg font-normal text-sm  text-[#1C1C1C ] dark:text-[#FFFFFF]  ${selectedSubItem ===
+                      subItem
+                        ? "bg-[#1C1C1C0D] dark:bg-[#FFFFFF1A]"
+                        : ""}`}
                       onClick={() => handleSubItemClick(subItem)}
                     >
                       {subItem}
                     </div>
-                  ))}
-                </div>
-              )}
+                  )}
+                </div>}
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>

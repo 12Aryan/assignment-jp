@@ -11,22 +11,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Dashboard />,
+        element: <Dashboard />
       },
       {
         path: "/order-list",
-        element: <OrderList />,
-      },
-    ],
-  },
+        element: <OrderList />
+      }
+    ]
+  }
 ]);
 
 const App = () => {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

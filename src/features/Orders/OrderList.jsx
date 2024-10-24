@@ -6,7 +6,7 @@ import SortingIcon from "../../icons/SortingIcon";
 import SearchIcon from "../../icons/SearchIcon";
 
 const OrderList = () => {
-  const mode = useSelector((state) => state.toggleTheme.theme);
+  const mode = useSelector(state => state.toggleTheme.theme);
 
   return (
     <div className="flex flex-col">
@@ -20,24 +20,24 @@ const OrderList = () => {
               title={"No actions attached to this button"}
               className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
             >
-              <AddIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
+              <AddIcon {...mode === "dark" && { fill: "#FFFFFF" }} />
             </div>
             <div
               title={"No actions attached to this button"}
               className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
             >
-              <FilterIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
+              <FilterIcon {...mode === "dark" && { fill: "#FFFFFF" }} />
             </div>
             <div
               title={"No actions attached to this button"}
               className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
             >
-              <SortingIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
+              <SortingIcon {...mode === "dark" && { fill: "#FFFFFF" }} />
             </div>
           </div>
           <div className="flex items-center h-7 bg-[#FFFFFF66] dark:bg-[#1C1C1C66] px-2 py-1 rounded-lg border border-[#1C1C1C1A] dark:border-[#FFFFFF1A]">
             <div className="mr-1 ">
-              <SearchIcon {...(mode === "dark" && { fill: "#a1a1a1" })} />
+              <SearchIcon {...mode === "dark" && { fill: "#a1a1a1" }} />
             </div>
             <input
               type="text"
