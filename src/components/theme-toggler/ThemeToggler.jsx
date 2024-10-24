@@ -30,8 +30,9 @@ const ThemeToggler = () => {
   return (
     <>
       <div
+        title={"Change theme!"}
         onClick={toggleTheme}
-        className={`w-min `}
+        className={`w-min hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer `}
         role="button"
         aria-label={`Switch to ${mode === "light" ? "dark" : "light"} mode`}
       >

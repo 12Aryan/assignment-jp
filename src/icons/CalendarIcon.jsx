@@ -1,5 +1,3 @@
-import React from "react";
-
 const CalendarIcon = ({ fill = "#1C1C1C" }) => {
   return (
     <svg
