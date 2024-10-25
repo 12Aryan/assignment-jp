@@ -117,10 +117,10 @@ const SidebarDrawer = ({ toggleSidebar, setToggleSidebar }) => {
   };
 
   return (
-    <div
+    <div 
       className={`fixed lg:hidden top-0 left-0 h-full w-64 transition-transform duration-300 ${
         toggleSidebar ? "translate-x-0" : "-translate-x-full"
-      } bg-white dark:bg-gray-800 shadow-lg z-50`}
+      } bg-white dark:bg-[#FFFFFF1A] bg-opacity-10 backdrop-blur-lg shadow-lg z-50`}
     >
       <button
         onClick={toggleDrawer}
