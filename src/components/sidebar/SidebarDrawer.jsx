@@ -120,12 +120,12 @@ const SidebarDrawer = ({ toggleSidebar, setToggleSidebar }) => {
     <>
     {toggleSidebar && (
          <div
-         className={`fixed lg:hidden inset-0 ${mode === "dark" ? "bg-black bg-opacity-50" : "bg-white bg-opacity-50"} backdrop-blur-sm z-40`}
+         className={`fixed xl:hidden inset-0 ${mode === "dark" ? "bg-black bg-opacity-50" : "bg-white bg-opacity-50"} backdrop-blur-sm z-40`}
          onClick={toggleDrawer}
        />
       )}
     <div 
-      className={`fixed lg:hidden top-0 left-0 h-full w-64 transition-transform duration-300 ${
+      className={`fixed xl:hidden top-0 left-0 h-full w-64 transition-transform duration-300 ${
         toggleSidebar ? "translate-x-0" : "-translate-x-full"
       } bg-white dark:bg-[#1c1c1c] bg-opacity-10 backdrop-blur-lg shadow-lg z-50`}
     >
