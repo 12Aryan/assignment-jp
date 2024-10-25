@@ -26,7 +26,7 @@ const Revenue = () => {
   );
 
   return (
-    <div className="flex gap-7 flex-col xl:flex-row">
+    <div className="flex gap-7 flex-col xl:flex-row ">
       <div className="bg-[#F7F9FB] dark:bg-[#FFFFFF0D] py-6 rounded-2xl flex flex-col w-full gap-4">
         <div className="flex items-center gap-4 px-6 text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]">
           Revenue
@@ -42,9 +42,7 @@ const Revenue = () => {
             <span className="text-xs font-semibold">$68,768</span>
           </div>
         </div>
-        <div className="w-full max-w-[662px]">
-          <LineChartComponent />
-        </div>
+        <LineChartComponent />
       </div>
 
       <div className="flex flex-col gap-4 bg-[#F7F9FB] dark:bg-[#FFFFFF0D] xs:items-center xs:justify-center xl:p-6 rounded-2xl xl:max-w-[272px] xl:min-w-[202px] xl:w-[272px] h-[318px] w-full">

@@ -7,9 +7,9 @@ const Layout = () => {
   return (
     <div className="flex h-screen">
       <Sidebar />
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col flex-1 max-w-[calc(100vw-492px)]">
         <Header />
-        <div className="flex-1 px-9 py-8 bg-white dark:bg-[#1c1c1c] overflow-y-auto scroll-hidden">
+        <div className="flex-1 max-w px-9 py-8 bg-white dark:bg-[#1c1c1c] overflow-y-auto scroll-hidden">
           <Outlet />
         </div>
       </div>
