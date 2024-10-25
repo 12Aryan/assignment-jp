@@ -1,9 +1,14 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../components/sidebar/Sidebar";
 import Header from "../components/header/Header";
 import RightSidebar from "../components/right-sidebar/RightSidebar";
 
 const Layout = () => {
+  
+
+  const location = useLocation()
+  const path = location.pathname
+
   return (
     <div className="flex h-screen">
       <Sidebar />
@@ -13,7 +18,7 @@ const Layout = () => {
           <Outlet />
         </div>
       </div>
-      <RightSidebar />
+     {path !== '/order-list' && <RightSidebar />}
     </div>
   );
 };
