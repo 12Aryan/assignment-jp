@@ -42,7 +42,7 @@ const Revenue = () => {
             <span className="text-xs font-semibold">$68,768</span>
           </div>
         </div>
-        <div className="w-full max-w-full">
+        <div className="w-full max-w-[662px]">
           <LineChartComponent />
         </div>
       </div>
