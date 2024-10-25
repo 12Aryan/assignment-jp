@@ -10,12 +10,6 @@ import {
 } from "recharts";
 
 const data = [
-  //   { name: "Jan", line1: 10, line2: 13 },
-  //   { name: "Feb", line1: 19, line2: 10 },
-  //   { name: "Mar", line1: 17, line2: 11 },
-  //   { name: "Apr", line1: 12, line2: 14 },
-  //   { name: "May", line1: 13, line2: 20 },
-  //   { name: "Jun", line1: 22, line2: 19 },
   { name: "Jan", line1: 12, line2: 18 },
   { name: "Feb", line1: 15, line2: 15 },
   { name: "Mar", line1: 25, line2: 5 },

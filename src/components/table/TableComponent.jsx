@@ -45,7 +45,6 @@ const TableComponent = () => {
     <div className="flex flex-col">
       <div className="overflow-x-auto overflow-y-scroll h-[440px] max-w-full">
         {" "}
-        {/* Use overflow-x-auto for horizontal scrolling */}
         <table className="table-auto w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-[#1C1C1C33] dark:border-[#FFFFFF33]">

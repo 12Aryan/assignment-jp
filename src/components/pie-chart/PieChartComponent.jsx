@@ -1,6 +1,5 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
-// Sample data for the pie chart
 const data = [
   { name: "Direct", value: 300.56 },
   { name: "Affiliate", value: 135.18 },
