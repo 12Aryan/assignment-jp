@@ -16,16 +16,16 @@ const ThemeToggler = () => {
 
   useEffect(() => {
     const userTheme = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if (userTheme === "dark" || (!userTheme && systemPrefersDark)) {
+    if (userTheme === "dark" || (userTheme === null && systemPrefersDark)) {
       document.documentElement.classList.add("dark");
+      dispatch(toggleThemeGlobal("dark")); 
     } else {
       document.documentElement.classList.remove("dark");
+      dispatch(toggleThemeGlobal("light")); 
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
