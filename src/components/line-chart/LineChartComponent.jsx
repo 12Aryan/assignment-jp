@@ -23,12 +23,7 @@ const LineChartComponent = () => {
 
   return (
     <ResponsiveContainer width="100%" height={232}>
-      <LineChart
-        data={data}
-        margin={{ top: 0, right: 24, left: 0, bottom: 0 }}
-        width={"100%"}
-        height={"100%"}
-      >
+      <LineChart data={data} margin={{ top: 0, right: 24, left: 0, bottom: 0 }}>
         <CartesianGrid
           horizontal={true}
           vertical={false}
