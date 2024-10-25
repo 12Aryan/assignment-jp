@@ -1,5 +1,6 @@
 import Projections from "../projections/Projections";
 import Revenue from "../revenue/Revenue";
+import Sales from "../sales/Sales";
 
 const Dashboard = () => {
   return (
@@ -13,6 +14,9 @@ const Dashboard = () => {
         </div>
         <div className="flex gap-7 w-full ">
           <Revenue />
+        </div>
+        <div className="flex gap-7 w-full ">
+          <Sales />
         </div>
       </div>
     </div>
