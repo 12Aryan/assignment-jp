@@ -120,7 +120,7 @@ const SidebarDrawer = ({ toggleSidebar, setToggleSidebar }) => {
     <>
     {toggleSidebar && (
          <div
-         className={`fixed inset-0 ${mode === "dark" ? "bg-black bg-opacity-50" : "bg-white bg-opacity-50"} backdrop-blur-sm z-40`}
+         className={`fixed lg:hidden inset-0 ${mode === "dark" ? "bg-black bg-opacity-50" : "bg-white bg-opacity-50"} backdrop-blur-sm z-40`}
          onClick={toggleDrawer}
        />
       )}
