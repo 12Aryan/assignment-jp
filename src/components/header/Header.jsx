@@ -7,8 +7,16 @@ import MacIcon from "../../icons/MacIcon";
 import ClockIcon from "../../icons/ClockIcon";
 import BellIcon from "../../icons/BellIcon";
 
-const Header = () => {
+const Header = ({toggleSidebar, setToggleSidebar,toggleNotificationBar,setToggleNotificationBar}) => {
   const mode = useSelector((state) => state.toggleTheme.theme);
+
+  const toggleLeftSidebar =()=>{
+    setToggleSidebar(!toggleSidebar)
+  }
+
+  const toggleNotification = ()=>{
+    setToggleNotificationBar(!toggleNotificationBar)
+  }
 
   return (
     <div className="flex py-4 px-8 justify-between items-center border-b border-[#1C1C1C1A] dark:border-[#FFFFFF1A] flex-wrap ">
@@ -17,6 +25,7 @@ const Header = () => {
           <div
             title={"No actions attached to this button"}
             className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+            onClick={toggleLeftSidebar}
           >
             <ToggleIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>
@@ -71,6 +80,7 @@ const Header = () => {
           <div
             title={"No actions attached to this button"}
             className="hover:bg-[#1C1C1C0D] dark:hover:bg-[#FFFFFF1A] p-2 rounded-lg cursor-pointer "
+            onClick={toggleNotification}
           >
             <ToggleIcon {...(mode === "dark" && { fill: "#FFFFFF" })} />
           </div>

@@ -16,7 +16,7 @@ import CorporateIcon from "../../icons/CorporateIcon";
 import SocialIcons from "../../icons/SocialIcons";
 import { useSelector } from "react-redux";
 
-const Sidebar = () => {
+const Sidebar = ({toggleSidebar,setToggleSidebar}) => {
   const navigate = useNavigate();
   const [highlight, setHighlight] = useState(0);
   const [selectedItem, setSelectedItem] = useState("Default");
@@ -91,6 +91,10 @@ const Sidebar = () => {
     }
   ];
 
+  const toggleDrawer = () => {
+    setToggleSidebar(!toggleSidebar);
+  };
+
   const handleHighlight = index => {
     setHighlight(index);
   };
@@ -113,7 +117,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="xs:hidden xl:flex flex-col h-screen min-w-[212px] px-5 py-6 gap-8 border-r border-[#1C1C1C1A] dark:border-[#FFFFFF1A] overflow-y-auto scroll-hidden">
+    <div className={`xs:hidden xl:flex flex-col h-screen min-w-[212px] px-5 py-6 gap-8 border-r ${toggleSidebar ? "translate-x-0" : "-translate-x-full"} border-[#1C1C1C1A] dark:border-[#FFFFFF1A] overflow-y-auto scroll-hidden`}>
       <div className="flex gap-2 items-center h-8 ">
         <ProfileIcon />
         <div className="font-normal text-sm text-[#1C1C1C] dark:text-[#FFFFFF] ">
