@@ -63,7 +63,7 @@ const RightSidebar = () => {
   ];
 
   return (
-    <div className="flex flex-col h-screen w-[280px] px-5 py-6 gap-6 border-l border-[#1C1C1C1A] dark:border-[#FFFFFF1A] overflow-y-auto scroll-hidden">
+    <div className="xs:hidden xl:flex flex-col h-screen w-[280px] px-5 py-6 gap-6 border-l border-[#1C1C1C1A] dark:border-[#FFFFFF1A] overflow-y-auto scroll-hidden">
       <div className="flex flex-col gap-4">
         <div className="text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF] ">
           Notifications

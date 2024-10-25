@@ -113,7 +113,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen min-w-[212px] px-5 py-6 gap-8 border-r border-[#1C1C1C1A] dark:border-[#FFFFFF1A] overflow-y-auto scroll-hidden">
+    <div className="xs:hidden xl:flex flex-col h-screen min-w-[212px] px-5 py-6 gap-8 border-r border-[#1C1C1C1A] dark:border-[#FFFFFF1A] overflow-y-auto scroll-hidden">
       <div className="flex gap-2 items-center h-8 ">
         <ProfileIcon />
         <div className="font-normal text-sm text-[#1C1C1C] dark:text-[#FFFFFF] ">
