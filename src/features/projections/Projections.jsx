@@ -45,6 +45,7 @@ const Projections = () => {
       textColor: mode === "dark" ? "text-[#1C1C1C]" : "#1C1C1C",
     },
   ];
+
   return (
     <>
       <div className="flex flex-col gap-7 flex-1">
@@ -76,7 +77,9 @@ const Projections = () => {
         <div className="text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF] px-6">
           Projection vs Actuals
         </div>
-        <BarChartComponent />
+        <div className="flex-grow">
+          <BarChartComponent />
+        </div>
       </div>
     </>
   );

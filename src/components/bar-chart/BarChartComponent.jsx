@@ -22,12 +22,10 @@ const BarChartComponent = () => {
   const mode = useSelector((state) => state.toggleTheme.theme);
 
   return (
-    <ResponsiveContainer width="100%" height={168}>
+    <ResponsiveContainer width="100%" height={168} className="max-w-full">
       <BarChart
         data={data}
         margin={{ top: 0, right: 24, left: 0, bottom: 0 }}
-        width={"100%"}
-        height={"100%"}
       >
         <CartesianGrid
           horizontal={true}

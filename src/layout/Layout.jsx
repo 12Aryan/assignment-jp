@@ -13,11 +13,19 @@ const Layout = () => {
 
   return (
     <div className="flex h-screen">
-      {toggleSidebar && <Sidebar setToggleSidebar={setToggleSidebar}
-          toggleSidebar={toggleSidebar}/>}
-      {toggleSidebar && <SidebarDrawer setToggleSidebar={setToggleSidebar}
-          toggleSidebar={toggleSidebar}/>}
-      <div className="flex flex-col flex-1 ">
+      {toggleSidebar && (
+        <Sidebar
+          setToggleSidebar={setToggleSidebar}
+          toggleSidebar={toggleSidebar}
+        />
+      )}
+      {toggleSidebar && (
+        <SidebarDrawer
+          setToggleSidebar={setToggleSidebar}
+          toggleSidebar={toggleSidebar}
+        />
+      )}
+      <div className="flex flex-col flex-1 max-w-[calc(100vw-492px)] ">
         <Header
           setToggleSidebar={setToggleSidebar}
           toggleSidebar={toggleSidebar}
@@ -28,8 +36,12 @@ const Layout = () => {
           <Outlet />
         </div>
       </div>
-      {path !== "/order-list" && <RightSidebar toggleNotificationBar={toggleNotificationBar}
-          setToggleNotificationBar={setToggleNotificationBar}/>}
+      {path !== "/order-list" && (
+        <RightSidebar
+          toggleNotificationBar={toggleNotificationBar}
+          setToggleNotificationBar={setToggleNotificationBar}
+        />
+      )}
     </div>
   );
 };
