@@ -34,7 +34,7 @@ const Layout = () => {
           toggleNotificationBar={toggleNotificationBar}
           setToggleNotificationBar={setToggleNotificationBar}
         />
-        <div className="flex-1 max-w xs:px-[60px] xl:px-9 py-8 bg-white dark:bg-[#1c1c1c] overflow-y-auto scroll-hidden">
+        <div className="flex-1 max-w px-9 py-8 bg-white dark:bg-[#1c1c1c] overflow-y-auto scroll-hidden">
           <Outlet />
         </div>
       </div>
