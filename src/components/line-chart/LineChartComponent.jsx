@@ -22,7 +22,7 @@ const LineChartComponent = () => {
   const mode = useSelector((state) => state.toggleTheme.theme);
 
   return (
-    <ResponsiveContainer width="100%" height={232}>
+    <ResponsiveContainer width="100%" height={232} className="max-w-full">
       <LineChart data={data} margin={{ top: 0, right: 24, left: 0, bottom: 0 }}>
         <CartesianGrid
           horizontal={true}
