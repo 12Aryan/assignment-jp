@@ -26,7 +26,7 @@ const Revenue = () => {
   );
 
   return (
-    <div className="flex gap-7 flex-col xl:flex-row w-full">
+    <>
       <div className="flex flex-1 flex-col w-full bg-[#F7F9FB] dark:bg-[#FFFFFF0D] rounded-2xl gap-5 py-6">
         <div className="flex items-center gap-4 px-6 text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]">
           Revenue
@@ -47,7 +47,7 @@ const Revenue = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 bg-[#F7F9FB] dark:bg-[#FFFFFF0D] xs:items-center xs:justify-center xl:p-6 rounded-2xl xl:max-w-[272px] xl:min-w-[202px] xl:w-[272px] h-[318px] w-full">
+      <div className="flex flex-col gap-4 bg-[#F7F9FB] dark:bg-[#FFFFFF0D] xs:items-center xs:justify-center xl:p-6 rounded-2xl 2xl:max-w-[202px] 2xl:min-w-[202px] 2xl:w-[202px] h-[318px] w-full">
         <div className="text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]">
           Revenue by Location
         </div>
@@ -56,7 +56,7 @@ const Revenue = () => {
           {locations.map(renderLocation)}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

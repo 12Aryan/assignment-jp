@@ -12,10 +12,10 @@ const Dashboard = () => {
         <div className="flex gap-7 w-full flex-col 2xl:flex-row">
           <Projections />
         </div>
-        <div className="flex gap-7 w-full ">
+        <div className="flex gap-7 w-full flex-col 2xl:flex-row ">
           <Revenue />
         </div>
-        <div className="flex gap-7 w-full ">
+        <div className="flex gap-7 w-full flex-col 2xl:flex-row ">
           <Sales />
         </div>
       </div>

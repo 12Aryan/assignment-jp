@@ -12,7 +12,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`flex flex-col gap-3 p-6 rounded-2xl w-[202px] ${bgColor} ${className} `}
+      className={`flex flex-col gap-3 p-6 rounded-2xl xs:w-full md:w-[202px] ${bgColor} ${className} `}
     >
       <div className={`${textColor} text-sm font-semibold`}>{label}</div>
       <div className="flex gap-7 items-center">

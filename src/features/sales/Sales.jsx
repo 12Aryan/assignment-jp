@@ -8,7 +8,7 @@ const Sales = () => {
   const mode = useSelector((state) => state.toggleTheme.theme);
 
   return (
-    <div className="flex gap-7 flex-col xl:flex-row w-full">
+    <>
       <div className="bg-[#F7F9FB] dark:bg-[#FFFFFF0D] py-6 rounded-2xl flex flex-col w-full gap-4   ">
         <div className="flex items-center gap-4 px-6 text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]">
           Top Selling Products
@@ -16,7 +16,7 @@ const Sales = () => {
         <SimpleTable tableData={tableData} headers={headersSimple} />
       </div>
 
-      <div className="flex flex-col gap-4 bg-[#F7F9FB] dark:bg-[#FFFFFF0D] xs:items-center p-6 rounded-2xl xl:max-w-[272px] xl:min-w-[202px] xl:w-[272px] h-[318px] w-full">
+      <div className="flex flex-col gap-4 bg-[#F7F9FB] dark:bg-[#FFFFFF0D] xs:items-center p-6 rounded-2xl 2xl:max-w-[272px] 2xl:min-w-[202px] 2xl:w-[272px] h-[318px] w-full">
         <div className="text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]">
           TotalSales
         </div>
@@ -60,7 +60,7 @@ const Sales = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

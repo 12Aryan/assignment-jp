@@ -7,16 +7,24 @@ import MacIcon from "../../icons/MacIcon";
 import ClockIcon from "../../icons/ClockIcon";
 import BellIcon from "../../icons/BellIcon";
 
-const Header = ({toggleSidebar, setToggleSidebar,toggleNotificationBar,setToggleNotificationBar}) => {
+const Header = ({
+  toggleSidebar,
+  toggleSidebarDrawer,
+  setToggleSidebarDrawer,
+  setToggleSidebar,
+  toggleNotificationBar,
+  setToggleNotificationBar,
+}) => {
   const mode = useSelector((state) => state.toggleTheme.theme);
 
-  const toggleLeftSidebar =()=>{
-    setToggleSidebar(!toggleSidebar)
-  }
+  const toggleLeftSidebar = () => {
+    setToggleSidebar(!toggleSidebar);
+    setToggleSidebarDrawer(!toggleSidebarDrawer);
+  };
 
-  const toggleNotification = ()=>{
-    setToggleNotificationBar(!toggleNotificationBar)
-  }
+  const toggleNotification = () => {
+    setToggleNotificationBar(!toggleNotificationBar);
+  };
 
   return (
     <div className="flex py-4 px-8 justify-between items-center border-b border-[#1C1C1C1A] dark:border-[#FFFFFF1A] flex-wrap ">

@@ -56,7 +56,7 @@ const Projections = () => {
             return rows;
           }, [])
           .map((row, rowIndex) => (
-            <div className="flex gap-7" key={rowIndex}>
+            <div className="flex flex-col md:flex-row gap-7" key={rowIndex}>
               {row.map((card, cardIndex) => (
                 <Card
                   key={cardIndex}

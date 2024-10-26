@@ -10,7 +10,7 @@ export default {
         md: "640px",
         lg: "768px",
         xl: "1024px",
-        "2xl": "1280px",
+        "2xl": "1270px",
         "3xl": "1440px",
         "4xl": "1600px",
         "5xl": "1920px",

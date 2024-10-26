@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const Layout = () => {
   const [toggleSidebar, setToggleSidebar] = useState(true);
+  const [toggleSidebarDrawer, setToggleSidebarDrawer] = useState(false);
   const [toggleNotificationBar, setToggleNotificationBar] = useState(false);
   const location = useLocation();
   const path = location.pathname;
@@ -19,20 +20,21 @@ const Layout = () => {
           toggleSidebar={toggleSidebar}
         />
       )}
-      {toggleSidebar && (
+      {toggleSidebarDrawer && (
         <SidebarDrawer
-          setToggleSidebar={setToggleSidebar}
-          toggleSidebar={toggleSidebar}
+          setToggleSidebar={setToggleSidebarDrawer}
+          toggleSidebar={toggleSidebarDrawer}
         />
       )}
-      <div className="flex flex-col flex-1 max-w-[calc(100vw-492px)] ">
+      <div className={`flex flex-col flex-1 w-full ${path !== "/order-list"?'xl:max-w-[calc(100vw-492px)]':'xl:max-w-[calc(100vw-212px)]' }`}>
         <Header
           setToggleSidebar={setToggleSidebar}
+          setToggleSidebarDrawer={setToggleSidebarDrawer}
           toggleSidebar={toggleSidebar}
           toggleNotificationBar={toggleNotificationBar}
           setToggleNotificationBar={setToggleNotificationBar}
         />
-        <div className="flex-1 max-w px-9 py-8 bg-white dark:bg-[#1c1c1c] overflow-y-auto scroll-hidden">
+        <div className="flex-1 max-w xs:px-[60px] xl:px-9 py-8 bg-white dark:bg-[#1c1c1c] overflow-y-auto scroll-hidden">
           <Outlet />
         </div>
       </div>
