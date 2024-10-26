@@ -28,7 +28,7 @@ const Revenue = () => {
   return (
     <>
       <div className="flex flex-1 flex-col w-full bg-[#F7F9FB] dark:bg-[#FFFFFF0D] rounded-2xl gap-5 py-6">
-        <div className="flex items-center gap-4 px-6 text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]">
+        <div className="flex flex-wrap items-center gap-4 px-6 text-sm font-semibold text-[#1C1C1C] dark:text-[#FFFFFF]">
           Revenue
           <LightBar />
           <div className="flex items-center">
